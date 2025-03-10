@@ -1,3 +1,7 @@
+"""
+docstring for this python module: This module serves as a starting point for a simple Docker container.
+"""
+
 from flask import Flask
 
 app = Flask(__name__)
