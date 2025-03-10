@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+    """Handles the root route and returns a greeting."""
     return "Hello, Docker!"
 
 if __name__ == '__main__':
