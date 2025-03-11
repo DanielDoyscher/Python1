@@ -1,9 +1,14 @@
+"""
+docstring for this python module: This module serves as a starting point for a simple Docker container.
+"""
+
 from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
+    """Handles the root route and returns a greeting."""
     return "Hello, Docker!"
 
 if __name__ == '__main__':
