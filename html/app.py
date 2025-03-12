@@ -3,7 +3,7 @@ Docstring for this Python module:
 This module serves as a starting point for a simple Docker container.
 """
 
-from flask import Flask
+from flask import Flask, request # Importiere das request-Objekt
 
 app = Flask(__name__)
 
