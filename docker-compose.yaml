@@ -1,12 +1,23 @@
-version: '3'
+version: '1.0'
+
 services:
-web:
-image: nginx:latest
-ports:
-- "8080:80"
-volumes:
-- ./src:/usr/share/nginx/html
-links:
-- php
-php:
-image: php:7-fpm
+  db:
+    container_name: postgres_container
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: pgkey
+      POSTGRES_DB: business_db
+    ports:
+      - 5432:5432
+    
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: steve.didgi@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: pgkey
+    ports:
+      - 5050:80

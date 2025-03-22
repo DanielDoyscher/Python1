@@ -23,5 +23,16 @@ def add():
     b = float(request.args.get('b', 0))
     return str(a + b)
 
+@app.route('/subtract')
+def handle_subtract():
+    """Subtracts two numbers provided as query parameters."""
+    a = float(request.args.get('a', 0))
+    b = float(request.args.get('b', 0))
+    return str(subtract(a, b))
+
+def subtract(a, b):
+    """Subtracts two numbers."""
+    return a - b
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5001)
